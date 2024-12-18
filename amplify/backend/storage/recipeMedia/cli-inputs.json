@@ -1,0 +1,16 @@
+{
+  "resourceName": "recipeMedia",
+  "policyUUID": "a1962461",
+  "bucketName": "collaborativerecipes4f8c5c662f774c25b0723ddbab8",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
