@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "collaborativerecipesa1c35c6c": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3u6br6elee0ps",
+          "type": "cicd"
+        }
       }
     }
   }

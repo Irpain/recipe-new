@@ -43,6 +43,13 @@
       "service": "Cognito"
     }
   },
+  "hosting": {
+    "amplifyhosting": {
+      "lastPushTimeStamp": "2024-12-18T23:56:39.956Z",
+      "service": "amplifyhosting",
+      "type": "cicd"
+    }
+  },
   "storage": {
     "recipeMedia": {
       "dependsOn": [],
