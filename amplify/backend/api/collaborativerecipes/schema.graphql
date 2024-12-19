@@ -1,7 +1,7 @@
 type Recipe
   @model
   @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
-  @key(name: "byOwner", fields: ["owner", "title"], queryField: "recipesByOwner") {
+  @primaryKey(fields: ["owner", "title"]) {
   id: ID!
   title: String!
   ingredients: [String!]!
@@ -9,14 +9,14 @@ type Recipe
   images: [String]
   videos: [String]
   owner: String!
-  comments: [Comment] @connection(keyName: "byRecipe", fields: ["id"])
-  ratings: [Rating] @connection(keyName: "byRecipe", fields: ["id"])
+  comments: [Comment] @hasMany(indexName: "byRecipe", fields: ["id"])
+  ratings: [Rating] @hasMany(indexName: "byRecipe", fields: ["id"])
 }
 
 type Comment
   @model
   @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
-  @key(name: "byRecipe", fields: ["recipeID", "createdAt"], queryField: "commentsByRecipe") {
+  @primaryKey(fields: ["recipeID", "createdAt"]) {
   id: ID!
   content: String!
   recipeID: ID!
@@ -27,7 +27,7 @@ type Comment
 type Rating
   @model
   @auth(rules: [{ allow: owner }, { allow: private, operations: [read] }])
-  @key(name: "byRecipe", fields: ["recipeID", "createdAt"], queryField: "ratingsByRecipe") {
+  @primaryKey(fields: ["recipeID", "createdAt"]) {
   id: ID!
   score: Int!
   recipeID: ID!
